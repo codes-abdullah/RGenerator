@@ -4,14 +4,14 @@ import java.applet.Applet;
 import java.nio.file.*;
 
 public class R {
-	public static jsps jsps192b474fd78 = new jsps();
-	public static consts consts19302971908 = new consts();
-	public static strings strings1939a3db559 = new strings();
-	public static keys keys192ebc663ea = new keys();
-	public static arrays arrays1932febbf11 = new arrays();
-	public static html_classes html_classes19354360da0 = new html_classes();
-	public static html_ids html_ids1936bea4e27 = new html_ids();
-	public static paths paths193238c9d8c = new paths();
+	public static jsps jsps192e9b51245 = new jsps();
+	public static consts consts193a686af9f = new consts();
+	public static strings strings192f367b935 = new strings();
+	public static keys keys192fb8dc14e = new keys();
+	public static arrays arrays1935d6ca77d = new arrays();
+	public static html_classes html_classes1939d992cd8 = new html_classes();
+	public static html_ids html_ids193056ef492 = new html_ids();
+	public static paths paths1933e8a45ee = new paths();
 	public static class jsps {
 			public static final String HEADER_BKP_2 = "C:/dev/eclipse/jse/default/workspace/RGenerator/src/test/webapp/header/header_bkp_2.jsp";
 		public static final String ACCOUNT_HELP = "C:/dev/eclipse/jse/default/workspace/RGenerator/src/test/webapp/login/account-help.jsp";

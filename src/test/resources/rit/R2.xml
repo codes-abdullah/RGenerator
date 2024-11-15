@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <R xmlns="codes.abdullah.rit" modifiers="public"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="codes.abdullah.rit ../../../src/main/resources/rit/R.xsd "
+	xsi:schemaLocation="codes.abdullah.rit https://raw.githubusercontent.com/codes-abdullah/RGenerator/refs/heads/master/src/main/resources/rit/R.xsd "
 	R-class-package="codes.abdullah.r"
-	Rjsp-class-package="codes.abdullah.r"
-	R-class-generate="true"
-	R-class-outputDir="../java/codes/abdullah/r"
-	Rjsp-class-generate="true"
+	Rjsp-class-package="codes.abdullah.r" R-class-generate="true"
+	R-class-outputDir="../java/codes/abdullah/r" Rjsp-class-generate="true"
 	Rjsp-class-outputDir="../java/codes/abdullah/r"
 	Rjs-script-generate="true" Rjs-script-outputDir="../webapp/js"
 	properties-strings-generate="true"
@@ -16,13 +14,15 @@
 
 
 	<class name="jsps" modifiers="public static">
-		
+		<resource-paths
+			root-dir="${project.build.resourceDirectory}" relative-paths="false"
+			matcher-pattern="glob:**"></resource-paths>
 	</class>
 
 
-	<resource-paths root-dir="imgs" relative-paths="false"/>
-	
-	
+	<resource-paths root-dir="imgs" relative-paths="false"  />
+
+
 
 
 

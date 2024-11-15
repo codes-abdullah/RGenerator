@@ -92,11 +92,29 @@
 					type="boolean">
 					<annotation>
 						<documentation>
-							If true, will insert (.) before the path, e.g:
-							/error.jsp -> ./error.jsp
+							If relative-paths=true, and relative-paths-to is empty, will insert (.)
+							before the path, e.g:
+							/error.jsp -> ./error.jsp, otherwise if relative-paths=true
+							and relative-paths-to not empty, will insert (relative-paths-to) e.g:
+							/error.jsp -> dev/jee/jsps/error.jsp
 						</documentation>
 					</annotation>
 				</attribute>
+
+				<attribute name="relative-paths-to" use="optional"
+					type="boolean">
+					<annotation>
+						<documentation>
+							If relative-paths=true, and relative-paths-to is empty, will insert (.)
+							before the path, e.g:
+							/error.jsp -> ./error.jsp, otherwise if relative-paths=true
+							and relative-paths-to not empty, will insert (relative-paths-to) e.g:
+							/error.jsp -> dev/jee/jsps/error.jsp
+						</documentation>
+					</annotation>
+				</attribute>
+
+
 
 
 				<attribute name="max-depth" use="optional"

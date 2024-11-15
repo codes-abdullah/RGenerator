@@ -86,7 +86,7 @@ public class RGeneratorTest {
 		// ==========
 		// ==========
 
-		String path = ProjectStructure.PROPERTY_PROJECT_BUILD_TEST_RESOURCE_DIRECTORY + "/rit/R.xml";
+		String path = ProjectStructure.PROPERTY_PROJECT_BUILD_TEST_RESOURCE_DIRECTORY + "/rit/R2.xml";
 //		path = "src/main/resources/gtest.xml";
 		RGenerator.generate(path);
 	}

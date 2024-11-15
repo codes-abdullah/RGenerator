@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <R xmlns="codes.abdullah.rit" modifiers="public"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="codes.abdullah.rit ../../../../src/main/resources/rit/R.xsd "
+	xsi:schemaLocation="codes.abdullah.rit https://raw.githubusercontent.com/codes-abdullah/RGenerator/refs/heads/master/src/main/resources/rit/R.xsd "
 	R-class-generate="true" R-class-package="codes.abdullah.r"
 	Rjsp-class-package="codes.abdullah.r"
 	R-class-outputDir="${project.build.testSourceDirectory}/codes/abdullah/r"
 	Rjsp-class-generate="true"
 	Rjsp-class-outputDir="${project.build.testSourceDirectory}/codes/abdullah/r"
-	Rjs-script-generate="true" Rjs-script-outputDir="${project.build.testWebappDirectory}/js"
+	Rjs-script-generate="true"
+	Rjs-script-outputDir="${project.build.testWebappDirectory}/js"
 	properties-strings-generate="true"
 	properties-strings-outputDir="${project.build.testResourceDirectory}/strings"
 	properties-strings-output-encoding="iso-8859-1">
@@ -16,35 +17,37 @@
 	<import>java.applet.Applet</import>
 	<import>java.lang.CharSequence</import>
 
-	
-	<resource-paths root-dir="${project.build.testResourceDirectory}"
+
+	<resource-paths
+		root-dir="${project.build.testResourceDirectory}"
 		matcher-pattern="glob:**/imgs/**/*.png" join-mode="JOIN_EXT_DIR_NAME"
 		max-depth="2147483647" relative-paths="false">
 	</resource-paths>
-	
-	
+
+
 	<resource-paths root-dir="../"
 		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
 		max-depth="2147483647" relative-paths="false">
 	</resource-paths>
-	
-		<resource-paths root-dir="."
+
+	<resource-paths root-dir="."
 		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
 		max-depth="2147483647" relative-paths="false">
 	</resource-paths>
-	
-		<resource-paths root-dir="inimg"
+
+	<resource-paths root-dir="inimg"
 		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
 		max-depth="2147483647" relative-paths="false">
 	</resource-paths>
 
 
 	<class name="jsps" modifiers="public static">
-		<resource-paths root-dir="${project.build.testWebappDirectory}"
-			join-mode="JOIN_NAME" matcher-pattern="glob:**/*.jsp"></resource-paths>
+		<resource-paths
+			root-dir="${project.build.testWebappDirectory}" join-mode="JOIN_NAME"
+			matcher-pattern="glob:**/*.jsp"></resource-paths>
 	</class>
-	
-	
+
+
 
 
 
@@ -73,7 +76,8 @@
 
 
 	<class name="strings" modifiers="public static">
-		<include-strings file="${project.build.testResourceDirectory}/rit/strings.xml"></include-strings>
+		<include-strings
+			file="${project.build.testResourceDirectory}/rit/strings.xml"></include-strings>
 	</class>
 
 	<class name="keys" modifiers="public static">

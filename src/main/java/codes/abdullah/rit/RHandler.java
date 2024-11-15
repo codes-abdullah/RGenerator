@@ -126,8 +126,10 @@ class RHandler extends DefaultHandler {
 //				currentClass = rclass;
 				break;
 			case RRoot.TAG_RESOURCE_PATHS:
+				String rootDirAttr = getAttr(attrs, RRoot.ATTR_ROOT_DIR, "/");
 				File rootDir = Utils.resolve(root_dir, relative_to, getAttr(attrs, RRoot.ATTR_ROOT_DIR, "/"));
 				if (!rootDir.exists()) {
+					
 					Utils.resolve(root_dir, relative_to, getAttr(attrs, RRoot.ATTR_ROOT_DIR, "/"));
 					throw new NoSuchFileException(rootDir.toString());
 				}
@@ -150,7 +152,7 @@ class RHandler extends DefaultHandler {
 					@Override
 					public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 						if (pm.matches(file)) {
-System.out.println("--->"+file);
+//System.out.println("--->"+file);
 //							int i = file.toString().indexOf(rootDirUnrelative);
 //							if (i < 0) {
 //								throw new RuntimeException(String.format(
