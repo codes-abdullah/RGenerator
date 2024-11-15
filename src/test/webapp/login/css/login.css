@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import url("../../register/css/register.css");
+
+.remember-me {
+	margin: 20px;
+}
+
+.account-help-email-will-be-sent-container {
+	margin: 30px;
+	padding: 30px;
+	background: #d9d9d9;
+}
+
+.account-help-email-will-be-sent-container label {
+	font-size: 20px;
+}

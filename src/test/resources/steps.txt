@@ -1,0 +1,71 @@
+- Download JDK FX 21
+- Install JDK FX 21
+- Setup JDK JAVA_HOME path
+------------------------
+- Install Eclipse
+Version: 2024-09 (4.33.0)
+Build id: 20240905-0614
+
+------------------------
+- Exclude Eclipse from antivirus scan
+- Add JDK 21 to Eclipse
+- Remove embedded JDK from eclipse
+
+------------------------
+- Create maven project
+- Rename https:// to http://
+- Add properties
+- Add maven compiler to support java 21
+- Specify main javafx class
+- Update maven
+- Add dependencies
+- clean and install
+- create module-info.java
+
+------------------------
+- add javafx requirements in module-info
+- run (expected exception)
+- export your app
+- run (should be fine)
+- Download and Install scenebuilder
+- setup Scenenbuilder in Eclipse
+
+- Create FXML file -> expecting "An error has occurred. See error log for more details. org/eclipse/jface/databinding/swt/WidgetProperties
+
+- upgrade e(fx)clipse from 3.8 to 3.10
+https://download.eclipse.org/efxclipse/updates-nightly/site/
+------------------------
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>21</java.version>
+		<javafx.version>21.0.4</javafx.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+	</properties>
+
+
+
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.8</version>
+				<configuration>
+					<mainClass>pkg.Main</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>

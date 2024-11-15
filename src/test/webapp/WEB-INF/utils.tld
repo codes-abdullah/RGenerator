@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib
+	xsi:schemaLocation="
+            http://java.sun.com/xml/ns/javaee 
+            http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1">
+	<tlib-version>1.0</tlib-version>
+	<short-name>StivloTags</short-name>
+	<uri>http://www.abdullah.com/tags</uri>
+
+
+	<tag>
+		<description>This tag: &lt;notnull&gt;
+			VAR
+		&lt;/notnull&gt; will throw {@link JspException} if 
+			VAR
+		 is not set</description>
+		<name>notnull</name>
+		<tag-class>codes.abdullah.web.jsp.tags.NotNullTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>write</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>language-direction</name>
+		<tag-class>codes.abdullah.web.jsp.tags.LanguageDirectionTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>language</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>reverse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>Removes a scoped variable (from a particular scope, if specified).</description>
+		<name>remove</name>
+		<tag-class>org.apache.taglibs.standard.tag.common.core.RemoveTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Name of the scoped variable to be removed (supports run-time-expression-value).</description>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scope for var.</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+
+	<tag>
+		<description>
+		Works exactly like jstl-core:set, with additional features: 
+		[1] var attribute accepts rtexprvalue. 
+		[2] rkey attribute, which accepts rtexprvalue, it will search for object, and invoke setValue internally, so
+		the key attribute can be used as another key for the object, then nothing will happen		
+		</description>
+		<name>set</name>
+		<tag-class>codes.abdullah.web.jsp.tags.SetTagWithRkey</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>rkey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+	<tag>
+		<name>pagination</name>
+		<tag-class>codes.abdullah.web.jsp.tags.PaginationTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				Total pages count			
+			</description>
+			<name>totalPages</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Current page number, usually equals the paramater page
+			</description>
+			<name>currentPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Total links to be created to choose pages, i.g: 5 -> [1][2][3][4][5] 
+			</description>
+			<name>totalLinks</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				The href input of (a) tag attribute, 
+				this will be formatted only if it contains %d, e.g: /mygame?page=%d
+			</description>
+			<name>href</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				The value input of (a) tag, this will be formatted only 
+				if it contains %d			
+			</description>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>
+				The text to be used as [first] button, could be [&lt;&lt;]			
+			</description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<description>
+				The text to be used as [next] button, could be [&gt;]			
+			</description>
+			<name>next</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				The text to be used as [last] button, could be [&gt;&gt;]			
+			</description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				The text to be used as [previous] button, could be [&lt;]			
+			</description>
+			<name>previous</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+	<tag>
+		<description>Css Block</description>
+		<name>css-block</name>
+		<tag-class>codes.abdullah.web.jsp.tags.CssBlockTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>path</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>		
+	</tag>
+	
+	<tag>
+		<description>Css Block - Class</description>
+		<name>css-class</name>
+		<tag-class>codes.abdullah.web.jsp.tags.CssClassBlockTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>		
+	</tag>
+</taglib>

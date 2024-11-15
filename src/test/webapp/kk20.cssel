@@ -1,0 +1,40 @@
+
+@import url('${R.css.KK_STYLELESS}');
+
+.${R.html_classes.DROPDOWN_MENU_CONTAINER }, .${R.html_classes.DROPDOWN_MENU_OPEN_BUTTON }, .${R.html_classes.DROPDOWN_MENU_CLOSE_BUTTON } {
+	min-width: 120px;
+	min-height: 30px;
+	background: #48d3;
+}
+
+.${R.html_classes.DROPDOWN_MENU_OPEN_BUTTON }:hover, .${R.html_classes.DROPDOWN_MENU_CONTAINER }:focus .${R.html_classes.DROPDOWN_MENU_OPEN_BUTTON } {
+	background: #4fd3;
+}
+
+.${R.html_classes.DROPDOWN_MENU_CONTENT} {
+	min-width: 120px;
+	background: red;
+	margin: 10px;
+}
+
+.${R.html_classes.DROPDOWN_MENU_CONTENT} a:hover {
+	background: black;
+}
+
+.${R.html_classes.ICON_CONTAINER } {
+	position: absolute;
+	display: flex;
+	padding: 0 10px;
+	flex-direction: row;
+	align-content: flex-start;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.fas {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}

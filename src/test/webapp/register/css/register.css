@@ -1,0 +1,274 @@
+body {
+	/* 	border: 3px dotted red; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background: linear-gradient(120deg, #007bff, #d0314c);
+	font-family: Roboto;
+	margin: 0;
+	padding: 0;
+	/*prevent scrolling content*/
+	/* overflow: hidden; */
+	height: 100vh;
+}
+
+.container-center {
+	/* border: 2px solid red; */
+	border-radius: 10px;
+	background: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 30%;
+	transform: translate(-50%, -50%);
+}
+
+.container-center h1 {
+	/* border: 1px solid blue; */
+	border-bottom: 1px solid silver;
+	padding: 0 0 20px 0;
+	text-align: center;
+}
+
+.container-center form {
+	/* border: 1px solid green; */
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+form .input-container {
+	/* border: 2px dotted blue;  */
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 15px 0;
+}
+
+.input-field-container {
+	margin: 0 5px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.input-field-container input {
+	border: none;
+	/* border: 1px solid black; */
+	background: none;
+	outline: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	/* this property will make sure padding will not push 
+	field to outside it's parent */
+	box-sizing: border-box;
+}
+
+/**
+	We used absolute top position px instead %
+	because % calculation will rely on
+	parent box height, if parent
+	box added new child, the % will change 
+	the position of the label
+*/
+.input-field-container label {
+	/* 	border: 1px solid red; */
+	color: #adadad;
+	font-size: 16px;
+	pointer-events: none;
+	color: #adadad;
+	position: relative;
+	top: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/*
+	The Pseudo Element (::), 
+	will create "Pseudo-Element" 
+	to be inserted
+	before given selector
+*/
+/*
+	The Direct Child Selector (>)
+	Will select only direct elements
+	(no descendant)
+*/
+.input-field-container>span {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #d9d9d9;
+}
+
+/*
+	The General Sibling Combinator (~)
+	will apply to all sibling elements
+	after given selector
+*/
+
+/*
+	if input is focused or valid, 
+	apply to all sibling of type label
+*/
+.input-field-container input:focus ~ label, .input-field-container input:valid 
+	 ~ label {
+	top: -70px;
+	color: #2691d9;
+	transition: 0.5s;
+}
+
+.input-field-container input:focus ~ span, .input-field-container input:valid
+	 ~ span {
+	width: 100%;
+	background: #2691d9;
+	transition: 0.5s;
+}
+
+.input-field-container input:invalid:focus ~ label {
+	top: -70px;
+	color: red;
+	transition: 0.5s;
+}
+
+.input-field-container input:invalid:focus ~span {
+	width: 100%;
+	background: red;
+	transition: 0.5s;
+}
+
+.tooltip-icon-container {
+	border: 2px solid black;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.tooltip-container {
+	border: 2px solid black;
+}
+
+.tooltip {
+	border: 1px solid black;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	min-width: 50px;
+	min-height: 50px;
+	max-width: 300px;
+	padding: 10px;
+	pointer-events: none;
+	background: white;
+	visibility: hidden;
+	align-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.captcha-container {
+	 border: 2px dotted #d9d9d9;  
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+}
+
+.captcha {
+	border: none;
+	/* 	border: 2px solid blue; */
+	background: #d9d9d9;
+	font-size: 30px;
+	letter-spacing: 3px;
+	right: 50px;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	/*prevent text selection*/
+	pointer-events: none;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-user-select: none;
+	text-align: center; /* Standard syntax */
+}
+
+.captcha-container .icon-container i {
+	/* border: 1px dotted red; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	font-size: 30px;
+	/* top: 50%; */
+	/* transform: translateY(-50%); */
+	cursor: pointer;
+	margin: 5px 10px;
+}
+
+.captcha-container .output-field-container {
+	/* border: 1px solid blue; */
+	width: 100%;
+	align-content: center;
+	text-align: center;
+}
+
+.captcha-container .output-field-container label {
+	/* border: 2px solid red; */
+	text-align: center;
+	font-size: 20px;
+	width: 100%;
+	color: #d9d9d9;
+	margin: 10px;
+	box-sizing: border-box;
+}
+
+input[type="Submit"] {
+	width: 100%;
+	height: 50px;
+	border: 1px solid;
+	border-radius: 25px;
+	font-size: 18px;
+	font-weight: 700;
+	cursor: pointer;
+	background: #2691d9;
+	color: #e9f4fb;
+}
+
+input[type="Submit"]:hover {
+	transition: .5s;
+	background: #166ca6;
+	color: #e9f4fb;
+}
+
+.login-and-register {
+	margin: 30px 0;
+	text-align: center;
+	font-size: 16px;
+	color: #666666;
+}
+
+.login-and-register a {
+	color: #2691d9;
+	text-decoration: none;
+}
+
+.login-and-register a:hover {
+	text-decoration: underline;
+}
+
+
+.icon-container span i{
+	/* border: 1px dotted red;*/
+	cursor: pointer; 
+}
+
+
+.warning-messages-container {
+	/* border: 1px solid red; */
+	margin: 40px;
+	color: red;
+	font-size: 16px;
+	font-weight: bold;
+	pointer-events: none;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R xmlns="codes.abdullah.rit" modifiers="public"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="codes.abdullah.rit ../../../src/main/resources/rit/R.xsd "
+	R-class-package="codes.abdullah.r"
+	Rjsp-class-package="codes.abdullah.r"
+	R-class-generate="true"
+	R-class-outputDir="../java/codes/abdullah/r"
+	Rjsp-class-generate="true"
+	Rjsp-class-outputDir="../java/codes/abdullah/r"
+	Rjs-script-generate="true" Rjs-script-outputDir="../webapp/js"
+	properties-strings-generate="true"
+	properties-strings-outputDir="strings"
+	properties-strings-output-encoding="iso-8859-1">
+
+
+
+	<class name="jsps" modifiers="public static">
+		
+	</class>
+
+
+	<resource-paths root-dir="imgs" relative-paths="false"/>
+	
+	
+
+
+
+</R>

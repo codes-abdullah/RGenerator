@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="codes.abdullah.rit.strings" xmlns:xs="codes.abdullah.rit.strings"
+	elementFormDefault="qualified">
+
+
+	<complexType name="string-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="string-array-type">
+		<sequence>
+			<element type="string" name="item" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+	</complexType>
+
+
+	<element name="resources">
+		<complexType>
+			<sequence>
+				<choice maxOccurs="unbounded">
+					<element type="xs:string-type" name="string"
+						maxOccurs="unbounded" minOccurs="0"></element>
+					<element type="xs:string-array-type" name="string-array"
+						maxOccurs="unbounded" minOccurs="0"></element>
+				</choice>
+			</sequence>			
+		</complexType>
+
+	</element>
+
+</schema>

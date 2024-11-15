@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns="codes.abdullah.rit.strings"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="codes.abdullah.rit.strings ../../../../src/main/resources/rit/strings.xsd ">
+	<string name="any_string">string</string>
+	<string-array name="jj">
+		<item>one</item>
+		<item>two</item>
+		<item>th\,ree</item>
+		<item>car</item>
+		<item>1223</item>
+	</string-array>
+	<string name="another"></string>
+</resources>

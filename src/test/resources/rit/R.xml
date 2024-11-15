@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R xmlns="codes.abdullah.rit" modifiers="public"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="codes.abdullah.rit ../../../../src/main/resources/rit/R.xsd "
+	R-class-generate="true" R-class-package="codes.abdullah.r"
+	Rjsp-class-package="codes.abdullah.r"
+	R-class-outputDir="${project.build.testSourceDirectory}/codes/abdullah/r"
+	Rjsp-class-generate="true"
+	Rjsp-class-outputDir="${project.build.testSourceDirectory}/codes/abdullah/r"
+	Rjs-script-generate="true" Rjs-script-outputDir="${project.build.testWebappDirectory}/js"
+	properties-strings-generate="true"
+	properties-strings-outputDir="${project.build.testResourceDirectory}/strings"
+	properties-strings-output-encoding="iso-8859-1">
+
+	<import>java.nio.file.*</import>
+	<import>java.applet.Applet</import>
+	<import>java.lang.CharSequence</import>
+
+	
+	<resource-paths root-dir="${project.build.testResourceDirectory}"
+		matcher-pattern="glob:**/imgs/**/*.png" join-mode="JOIN_EXT_DIR_NAME"
+		max-depth="2147483647" relative-paths="false">
+	</resource-paths>
+	
+	
+	<resource-paths root-dir="../"
+		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
+		max-depth="2147483647" relative-paths="false">
+	</resource-paths>
+	
+		<resource-paths root-dir="."
+		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
+		max-depth="2147483647" relative-paths="false">
+	</resource-paths>
+	
+		<resource-paths root-dir="inimg"
+		matcher-pattern="glob:**/imgs/**/*.jpg" join-mode="JOIN_EXT_DIR_NAME"
+		max-depth="2147483647" relative-paths="false">
+	</resource-paths>
+
+
+	<class name="jsps" modifiers="public static">
+		<resource-paths root-dir="${project.build.testWebappDirectory}"
+			join-mode="JOIN_NAME" matcher-pattern="glob:**/*.jsp"></resource-paths>
+	</class>
+	
+	
+
+
+
+
+	<class name="consts" modifiers="public static">
+		<pair key="default_db_args">create=true;</pair>
+		<pair key="default_db_dialect">org.hibernate.dialect.DerbyTenSevenDialect</pair>
+		<pair key="default_db_driver">org.apache.derby.jdbc.ClientDriver</pair>
+		<pair key="default_db_host">localhost</pair>
+		<pair key="default_db_port" type="int">1527</pair>
+		<pair key="default_db_schema">jdbc:derby</pair>
+		<pair key="default_db_username">root</pair>
+		<pair key="default_display_rows_per_page" type="int">5</pair>
+		<pair key="default_redirect_after_seconds" type="int">5</pair>
+		<pair key="default_servlet_session_timeout_secounds" type="int">60</pair>
+		<pair key="default_verification_token_expiration_minutes">1</pair>
+		<pair key="default_verification_token_length" type="int">20</pair>
+		<pair key="dont_redirect" type="int">-1</pair>
+		<pair key="email_regex_pattern">[a-z0-9._%+\\-]+@[a-z0-9.\\-]+</pair>
+		<pair key="password_regex_pattern">^[a-zA-Z0-9!#@&amp;\\(\\).]{8,20}$</pair>
+		<pair key="username_regex_pattern">^[a-zA-Z0-9_]{4,10}$</pair>
+		<pair key="default_db_password"></pair>
+
+	</class>
+
+
+
+	<class name="strings" modifiers="public static">
+		<include-strings file="${project.build.testResourceDirectory}/rit/strings.xml"></include-strings>
+	</class>
+
+	<class name="keys" modifiers="public static">
+		<key>dbd</key>
+		<key>display_rows_count</key>
+		<key>include_page</key>
+		<key>invalid_password</key>
+		<key>message</key>
+		<key>password</key>
+		<key>redirect_after</key>
+		<key>referer</key>
+		<key>test_url</key>
+		<key>test_url_result</key>
+		<key>title</key>
+		<key>url</key>
+		<key>user</key>
+		<key>user_id</key>
+		<key>username</key>
+		<key>users</key>
+		<key>verification_tokens</key>
+		<key>verified</key>
+		<key>warning_message</key>
+		<key>warning_messages</key>
+		<key>warning_title</key>
+
+		<pair key="jpa_driver">jakarta.persistence.jdbc.driver</pair>
+		<pair key="jpa_password">jakarta.persistence.jdbc.password</pair>
+		<pair key="jpa_url">jakarta.persistence.jdbc.url</pair>
+		<pair key="jpa_user">jakarta.persistence.jdbc.user</pair>
+	</class>
+
+
+	<class name="arrays" modifiers="public static">
+		<array name="jdbc_url_form_parts">
+			<item>db_driver</item>
+			<item>db_schema</item>
+			<item>db_host</item>
+			<item>db_port</item>
+			<item>db_name</item>
+			<item>db_args</item>
+			<item>db_username</item>
+			<item>db_password</item>
+		</array>
+
+
+		<array name="jdbc_url_parts">
+			<item>db_schema</item>
+			<item>db_host</item>
+			<item>db_port</item>
+			<item>db_name</item>
+			<item>db_args</item>
+		</array>
+
+		<array name="supported_languages">
+			<item>en</item>
+			<item>ar</item>
+		</array>
+
+		<array name="table_users_columns_names">
+			<item>id</item>
+			<item>username</item>
+			<item>email</item>
+			<item>password</item>
+			<item>admin</item>
+		</array>
+
+		<array name="table_users_columns_types">
+			<item>int</item>
+			<item>String</item>
+			<item>String</item>
+			<item>String</item>
+			<item>boolean</item>
+		</array>
+	</class>
+
+
+	<class name="html_classes" modifiers="public static">
+		<key>account_help</key>
+		<key>account_help_email_will_be_sent_container</key>
+		<key>blank_space</key>
+		<key>button</key>
+		<key>button_container</key>
+		<key>buttons_group</key>
+		<key>captcha</key>
+		<key>captcha_container</key>
+		<key>container</key>
+		<key>container_center</key>
+		<key>dropdown_menu_close_button</key>
+		<key>dropdown_menu_container</key>
+		<key>dropdown_menu_content</key>
+		<key>dropdown_menu_icon</key>
+		<key>dropdown_menu_icon_container</key>
+		<key>dropdown_menu_icons_container</key>
+		<key>dropdown_menu_open_button</key>
+		<key>dropdown_menus_group</key>
+		<key>header_container</key>
+		<key>header_separator</key>
+		<key>input_container</key>
+		<key>input_field_container</key>
+		<key>login_and_register</key>
+		<key>output_field_container</key>
+		<key>password_toggle_icon</key>
+		<key>remember_me</key>
+		<key>search_bar_button</key>
+		<key>search_bar_button_container</key>
+		<key>search_bar_container</key>
+		<key>search_bar_input</key>
+		<key>text_field</key>
+		<key>text_field_icons</key>
+		<key>text_field_icons_container</key>
+		<key>tooltip</key>
+		<key>warning_messages_container</key>
+	</class>
+
+
+	<class name="html_ids" modifiers="public static">
+
+		<key>admin_email</key>
+		<key>admin_password</key>
+		<key>admin_username</key>
+		<key>captcha</key>
+		<key>captcha_input</key>
+		<key>captcha_output</key>
+		<key>db_password</key>
+		<key>db_url</key>
+		<key>db_username</key>
+		<key>email</key>
+		<key>id</key>
+		<key>output</key>
+		<key>password</key>
+		<key>register_email_regex</key>
+		<key>register_password_regex</key>
+		<key>register_username_regex</key>
+		<key>username</key>
+	</class>
+
+	<class name="paths" modifiers="public static">
+		<path name="mypth">files/db/current.dbd</path>
+	</class>
+
+
+
+</R>

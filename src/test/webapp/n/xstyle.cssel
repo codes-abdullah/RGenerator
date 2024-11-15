@@ -1,0 +1,13 @@
+
+@import url('${R.css.XSTYLE_BASE}');
+@import url('${R.css.AAA}');
+
+.${R.html_classes.BUTTON}{	
+	background: blue;
+}
+
+.${R.html_classes.BUTTON}:bla{	
+	/*an empty block */
+}
+
+

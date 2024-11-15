@@ -1,0 +1,13 @@
+
+@import url('${R.css.FFF}');
+
+div{
+	background: green;
+	border: 1px dotted black;
+}
+
+.${R.html_classes.BUTTON}{	
+	border: 3px solid red;
+}
+
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="codes.abdullah.rit" xmlns:xs="codes.abdullah.rit"
+	elementFormDefault="qualified">
+
+
+	<complexType name="string-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="string-array-type">
+		<sequence>
+			<element type="string" name="item" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+	</complexType>
+
+	<complexType name="import-type">
+		<simpleContent>
+			<extension base="string">
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="include-strings-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="file" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+
+	<complexType name="path-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+
+	<complexType name="resource-paths-type">
+		<annotation>
+			<documentation>
+				Generate paths to resource files in the project
+			</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="string">
+				<attribute name="root-dir" use="required" type="string">
+					<annotation>
+						<documentation>
+							Root dir to start search from, must be relative to
+							application root dir, e.g: src/main/resources
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="matcher-pattern" use="optional"
+					type="string" default="glob:**">
+					<annotation>
+						<documentation>
+							pattern for java.nio.file.PathMatcher, must start
+							with (glob:) or (regex:)
+						</documentation>
+					</annotation>
+				</attribute>
+				<!-- <attribute name="extensions" use="optional" type="string"> <annotation> 
+					<documentation> Specific extensions separated by comma to search for files, 
+					or * for wildcard, e.g: jpeg,png,xml </documentation> </annotation> </attribute> -->
+
+
+				<attribute name="join-mode" use="optional"
+					default="JOIN_NAME" type="string">
+					<annotation>
+						<documentation>
+							How to create declared field names, e.g:
+							mode(JOIN_EXT_DIR_NAME), path(imgs/splash.jpeg), result field
+							name: (JPEG_IMGS_SPLASH), available modes are:
+							[JOIN_NAME|JOIN_EXT_NAME|JOIN_DIR_NAME|JOIN_EXT_DIR_NAME]
+						</documentation>
+					</annotation>
+				</attribute>
+
+				<attribute name="relative-paths" use="optional"
+					type="boolean">
+					<annotation>
+						<documentation>
+							If true, will insert (.) before the path, e.g:
+							/error.jsp -> ./error.jsp
+						</documentation>
+					</annotation>
+				</attribute>
+
+
+				<attribute name="max-depth" use="optional"
+					type="nonNegativeInteger" default="2147483647">
+					<annotation>
+						<documentation>
+							Max depth to search in subdirs
+						</documentation>
+					</annotation>
+				</attribute>
+
+
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="pair-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="key" type="string" use="required">
+					<annotation>
+						<documentation>The pair key, by default will be capitalized
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="type" type="string" use="optional">
+					<annotation>
+						<documentation>Override default value type, default is
+							java.lang.String
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="key-type">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="key" type="string" use="optional">
+					<annotation>
+						<documentation>Override default key name, default name is the
+							value capitalized
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="type" type="string" use="optional">
+					<annotation>
+						<documentation>Override default type, default is
+							java.lang.String
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+
+	<complexType name="array-type">
+		<sequence>
+			<element type="string" name="item" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="type" type="string" use="optional"></attribute>
+	</complexType>
+
+
+
+
+
+	<complexType name="class-type">
+		<sequence>
+			<choice maxOccurs="unbounded">
+				<element type="xs:pair-type" name="pair" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:class-type" name="class" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:key-type" name="key" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:array-type" name="array" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:path-type" name="path" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:string-type" name="string" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+				<element type="xs:string-array-type" name="string-array"
+					minOccurs="0" maxOccurs="unbounded">
+				</element>
+				<element type="xs:include-strings-type"
+					name="include-strings" minOccurs="0" maxOccurs="unbounded">
+				</element>
+				<element type="xs:resource-paths-type" name="resource-paths"
+					minOccurs="0" maxOccurs="unbounded">
+				</element>
+			</choice>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="modifiers" type="string"
+			default="public static">
+			<annotation>
+				<documentation>
+					Specify the modifiers
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+
+
+
+	<element name="R">
+		<complexType>
+			<sequence>
+				<element type="xs:import-type" name="import"
+					maxOccurs="unbounded" minOccurs="0"></element>
+				<choice maxOccurs="unbounded">
+					<element type="xs:class-type" name="class"
+						maxOccurs="unbounded" minOccurs="0"></element>
+					<element type="xs:pair-type" name="pair"
+						maxOccurs="unbounded" minOccurs="0"></element>
+					<element type="xs:key-type" name="key" minOccurs="0"
+						maxOccurs="unbounded">
+					</element>
+					<element type="xs:array-type" name="array"
+						maxOccurs="unbounded" minOccurs="0"></element>
+					<element type="xs:path-type" name="path" minOccurs="0"
+						maxOccurs="unbounded">
+					</element>
+					<element type="xs:string-type" name="string" minOccurs="0"
+						maxOccurs="unbounded">
+					</element>
+					<element type="xs:string-array-type" name="string-array"
+						minOccurs="0" maxOccurs="unbounded">
+					</element>
+					<element type="xs:include-strings-type"
+						name="include-strings" minOccurs="0" maxOccurs="unbounded">
+					</element>
+					<element type="xs:resource-paths-type"
+						name="resource-paths" minOccurs="0" maxOccurs="unbounded">
+					</element>
+				</choice>
+			</sequence>
+
+			<attribute name="R-class-package" type="string"
+				use="optional">
+				<annotation>
+					<documentation>The package statement for R class</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="Rjsp-class-package" type="string"
+				use="optional">
+				<annotation>
+					<documentation>The package statement for Rjsp class</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="modifiers" type="string" default="public"></attribute>
+			<attribute name="R-class-generate" use="required"
+				type="boolean"></attribute>
+			<attribute name="R-class-outputDir" use="required"
+				type="string"></attribute>
+
+			<attribute name="Rjsp-class-generate" use="optional"
+				type="boolean"></attribute>
+			<attribute name="Rjsp-class-outputDir" use="optional"
+				type="string"></attribute>
+
+
+			<attribute name="Rjs-script-generate" use="optional"
+				type="boolean"></attribute>
+			<attribute name="Rjs-script-outputDir" use="optional"
+				type="string"></attribute>
+
+			<attribute type="boolean"
+				name="properties-strings-generate" use="optional" default="false">
+				<annotation>
+					<documentation>Boolean to indicate wither .properties files should
+						be generated or not
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute type="string"
+				name="properties-strings-outputDir" use="optional">
+				<annotation>
+					<documentation>The output dir for .properties files, must be
+						relative to app-
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute type="string"
+				name="properties-strings-output-encoding" use="optional"
+				default="iso-8859-1">
+				<annotation>
+					<documentation>The output encoding for .properties files
+					</documentation>
+				</annotation>
+			</attribute>
+
+
+		</complexType>
+
+	</element>
+
+</schema>
