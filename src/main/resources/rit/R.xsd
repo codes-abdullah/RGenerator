@@ -102,7 +102,7 @@
 				</attribute>
 
 				<attribute name="relative-paths-to" use="optional"
-					type="boolean">
+					type="string">
 					<annotation>
 						<documentation>
 							If relative-paths=true, and relative-paths-to is empty, will insert (.)
